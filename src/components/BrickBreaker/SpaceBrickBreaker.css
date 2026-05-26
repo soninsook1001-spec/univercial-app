@@ -1,0 +1,529 @@
+/* Cosmic Space Brick Breaker 스타일시트 */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+  --neon-cyan: #00f6ff;
+  --neon-purple: #a855f7;
+  --neon-red: #f43f5e;
+  --neon-gold: #fbbf24;
+  --neon-green: #10b981;
+  --bg-slate: #0f172a;
+}
+
+/* 전체 컨테이너 */
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0b0f19 0%, #030712 100%);
+  font-family: 'Outfit', sans-serif;
+  color: #f8fafc;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.game-hud-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+/* 글래스모피즘 공통 */
+.glass {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* 상단 HUD 패널 */
+.hud-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  box-sizing: border-box;
+}
+
+.hud-center {
+  text-align: center;
+}
+
+.game-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin: 0;
+  background: linear-gradient(90deg, #00f6ff, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 246, 255, 0.3));
+}
+
+.hud-level {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hud-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.hud-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* 네온 글로우 텍스트 효과 */
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 246, 255, 0.6);
+  color: var(--neon-cyan);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+  color: #c084fc;
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+  color: var(--neon-gold);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.6);
+  color: var(--neon-red);
+}
+
+/* Canvas 프레임 및 오버레이 */
+.canvas-frame {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 246, 255, 0.15);
+  border: 1.5px solid rgba(0, 246, 255, 0.25);
+  background: #020617;
+}
+
+.game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 게임 오버레이 (시작, 게임오버 등) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 40px;
+  text-align: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.overlay-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 0 0 15px 0;
+}
+
+.overlay-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 460px;
+  margin: 0 0 30px 0;
+}
+
+/* 로고 애니메이션 */
+.neon-logo-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.pulsing-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+  animation: logoPulse 2s infinite alternate;
+}
+
+.sub-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 12px;
+  color: #c084fc;
+  text-shadow: 0 0 8px var(--neon-purple);
+  margin-top: 5px;
+  margin-left: 8px; /* 자간 균형 */
+}
+
+@keyframes logoPulse {
+  0% {
+    text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+  }
+  100% {
+    text-shadow: 0 0 12px var(--neon-cyan), 0 0 25px var(--neon-cyan), 0 0 50px var(--neon-cyan);
+  }
+}
+
+/* 버튼 세트 */
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.play-button, .reset-button, .close-help-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-neon-cyan {
+  background: var(--neon-cyan);
+  color: #020617;
+  box-shadow: 0 0 15px rgba(0, 246, 255, 0.4);
+}
+
+.btn-neon-cyan:hover {
+  background: #fff;
+  box-shadow: 0 0 25px rgba(0, 246, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-neon-red {
+  background: transparent;
+  color: var(--neon-red);
+  border: 1.5px solid var(--neon-red);
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);
+}
+
+.btn-neon-red:hover {
+  background: var(--neon-red);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-neon-gold {
+  background: var(--neon-gold);
+  color: #020617;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+}
+
+.btn-neon-gold:hover {
+  background: #fff;
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-neon-purple {
+  background: var(--neon-purple);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.btn-neon-purple:hover {
+  background: #fff;
+  color: var(--neon-purple);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.8);
+  transform: translateY(-2px);
+}
+
+/* 도움말 버튼 */
+.help-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  margin-top: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.help-toggle-btn:hover {
+  color: var(--neon-cyan);
+}
+
+/* 도움말 모달 가이드 */
+.help-modal {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  z-index: 20;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.help-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--neon-cyan);
+  margin: 0 0 15px 0;
+  text-shadow: 0 0 8px rgba(0, 246, 255, 0.4);
+  text-align: center;
+  width: 100%;
+}
+
+.help-grid {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.help-section {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.help-section h4 {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 6px;
+}
+
+.help-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.help-section li {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #94a3b8;
+}
+
+.help-section code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #f1f5f9;
+  font-family: monospace;
+}
+
+.items-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* 아이템 배지 배색 */
+.item-badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  flex-shrink: 0;
+  color: #0f172a;
+}
+
+.item-badge.speed-up { background: var(--neon-red); color: #fff; }
+.item-badge.speed-down { background: var(--neon-green); }
+.item-badge.expand { background: var(--neon-cyan); }
+.item-badge.laser { background: var(--neon-gold); }
+.item-badge.multi { background: #ec4899; color: #fff; }
+.item-badge.grid { background: var(--neon-purple); color: #fff; }
+.item-badge.heart { background: #f43f5e; color: #fff; }
+
+.close-help-btn {
+  padding: 10px 24px;
+  font-size: 13px;
+  margin-top: auto;
+}
+
+/* 스코어 결과 */
+.score-summary {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #e2e8f0;
+}
+
+.new-record {
+  font-size: 14px;
+  margin-top: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* 하단 HUD 패널 */
+.bottom-hud {
+  padding: 12px 20px;
+}
+
+/* 목숨 하트 표시 */
+.lives-container {
+  display: flex;
+  gap: 5px;
+  font-size: 22px;
+}
+
+.heart-glow {
+  transition: all 0.3s;
+}
+
+.heart-glow.filled {
+  color: var(--neon-red);
+  text-shadow: 0 0 8px rgba(244, 63, 94, 0.8);
+}
+
+.heart-glow.empty {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* 활성 버프 표시 */
+.active-buffs {
+  display: flex;
+  gap: 8px;
+  max-width: 400px;
+  overflow-x: auto;
+}
+
+.buff-pill {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(0, 246, 255, 0.15);
+  border: 1px solid rgba(0, 246, 255, 0.3);
+  color: var(--neon-cyan);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 0 6px rgba(0, 246, 255, 0.2);
+}
+
+.animate-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.buff-none {
+  font-size: 11px;
+  color: #475569;
+}
+
+/* 설정 컨트롤 영역 */
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.control-indicator {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background: rgba(0, 246, 255, 0.1);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 8px rgba(0, 246, 255, 0.3);
+}
+
+/* 반응형 크기 비례 조절 (Vite Canvas 4:3) */
+@media (max-width: 840px) {
+  .canvas-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
