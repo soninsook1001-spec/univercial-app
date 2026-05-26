@@ -8,6 +8,7 @@ import Programs from './components/Programs';
 import Packages from './components/Packages';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
+import LogoIcon from './components/LogoIcon';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <header className="navbar">
         <div className="container nav-container">
           <div className="logo">
-            <span className="logo-icon">✨</span>
+            <LogoIcon size={32} style={{ marginRight: '4px' }} />
             <span className="logo-text">Vibe Education</span>
           </div>
           <nav className="nav-links">

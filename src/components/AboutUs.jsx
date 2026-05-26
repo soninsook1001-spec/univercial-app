@@ -8,10 +8,7 @@ const AboutUs = () => {
       <div className="container">
         <div className="about-grid">
           <div className="about-image-wrapper">
-            {/* Using a placeholder div for director photo */}
-            <div className="director-photo">
-              <span className="photo-placeholder-text">Director Photo</span>
-            </div>
+            <img src="/director.png" alt="Director of Vibe Education" className="director-photo" />
             <div className="experience-badge">
               <span className="years">15+</span>
               <span className="text">Years of Excellence</span>

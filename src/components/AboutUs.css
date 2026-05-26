@@ -16,17 +16,9 @@
 .director-photo {
   width: 100%;
   aspect-ratio: 4/5;
-  background-color: var(--primary-beige);
+  object-fit: cover;
   border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.photo-placeholder-text {
-  color: var(--text-light);
-  font-weight: 500;
 }
 
 .experience-badge {

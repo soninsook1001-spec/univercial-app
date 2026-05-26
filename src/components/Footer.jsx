@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { MapPin, Phone, Mail, Share2, Globe } from 'lucide-react';
+import LogoIcon from './LogoIcon';
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="logo footer-logo">
-              <span className="logo-icon">✨</span>
+              <LogoIcon size={32} style={{ marginRight: '4px' }} />
               <span className="logo-text">Vibe Education</span>
             </div>
             <p className="footer-desc">
