@@ -1232,7 +1232,23 @@ export default function SpaceBrickBreaker() {
 
           {/* 1. 시작 화면 오버레이 */}
           {gameState === 'START' && (
-            <div className="overlay glass flex-col">
+            <div className="overlay start-overlay flex-col">
+              <div className="cosmic-glow-1"></div>
+              <div className="cosmic-glow-2"></div>
+              <div className="cosmic-glow-3"></div>
+              <div className="starry-bg"></div>
+              <div className="cosmic-dust">
+                <div className="dust-particle dp-1"></div>
+                <div className="dust-particle dp-2"></div>
+                <div className="dust-particle dp-3"></div>
+                <div className="dust-particle dp-4"></div>
+                <div className="dust-particle dp-5"></div>
+              </div>
+              <div className="cosmic-corner cc-tl"></div>
+              <div className="cosmic-corner cc-tr"></div>
+              <div className="cosmic-corner cc-bl"></div>
+              <div className="cosmic-corner cc-br"></div>
+
               <div className="neon-logo-container">
                 <span className="pulsing-logo">VIBE SPACE</span>
                 <span className="sub-logo">BRICK BREAKER</span>
