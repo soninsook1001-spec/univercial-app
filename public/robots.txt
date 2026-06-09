@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://restory.cloud/sitemap.xml
+Sitemap: https://www.restory.cloud/sitemap.xml
