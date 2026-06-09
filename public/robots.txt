@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soninsook1001-spec.github.io/univercial-app/sitemap.xml
